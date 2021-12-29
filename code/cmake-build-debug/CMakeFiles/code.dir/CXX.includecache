@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/10 lab/code/functions.cpp
+functions.hpp
+/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/10 lab/code/functions.hpp
+
 /Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/10 lab/code/functions.hpp
 iostream
 -
@@ -19,8 +23,4 @@ time.h
 -
 math.h
 -
-
-/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/10 lab/code/main.cpp
-functions.hpp
-/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/10 lab/code/functions.hpp
 

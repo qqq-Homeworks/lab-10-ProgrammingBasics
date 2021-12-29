@@ -15,6 +15,22 @@ void printMatrix(double **matrix, size_t N) {
 }
 
 
+void multiplyMatrixes(double **matrix1, double **matrix2, double **resultMatrix, size_t N) {
+    for (size_t i = 0; i < N; ++i) {
+        for (size_t j = 0; j < N; ++j) {
+            resultMatrix[i][j] = 0;
+        }
+    }
+    for (size_t i = 0; i < N; ++i) {
+        for (size_t j = 0; j < N; ++j) {
+            for (size_t k = 0; k < N; ++k) {
+                resultMatrix[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+            resultMatrix[i][j] = abs(resultMatrix[i][j]);
+        }
+    }
+}
+
 bool isMatrixHasReversed(double **matrix, size_t N) {
     bool result = true;
     for (size_t i = 0; i < N; ++i) {
@@ -35,22 +51,9 @@ bool isMatrixHasReversed(double **matrix, size_t N) {
         }
     }
     return true;
-}
-
-void multiplyMatrixes(double **matrix1, double **matrix2, double **resultMatrix, size_t N) {
-    for (size_t i = 0; i < N; ++i) {
-        for (size_t j = 0; j < N; ++j) {
-            resultMatrix[i][j] = 0;
-        }
-    }
-    for (size_t i = 0; i < N; ++i) {
-        for (size_t j = 0; j < N; ++j) {
-            for (size_t k = 0; k < N; ++k) {
-                resultMatrix[i][j] += matrix1[i][k] * matrix2[k][j];
-            }
-            resultMatrix[i][j] = abs(resultMatrix[i][j]);
-        }
-    }
+    // по-хорошему ещё бы проверять, есть ли подходящая строка выше. Но в методе требуют проверять лишь те,
+    // что под строкой с нулём на главной диагонали. Проверка тех строк что выше - черевата, потому что нужно
+    // проверять ещё и то, чтобы они не заменились на строки с нулём в главной диагонали.
 }
 
 void generateRandom(double **matrix, size_t N) {
