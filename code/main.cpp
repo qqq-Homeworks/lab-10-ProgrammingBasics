@@ -5,7 +5,12 @@ int main() {
     for (size_t i = 0; i < SIZE; ++i) {
         matrixOriginal[i] = new double[SIZE];
     }
-    generateRandom(matrixOriginal, SIZE);
+
+    for (size_t i = 0; i < SIZE; ++i) {
+        for (size_t j = 0; j < SIZE; ++j) {
+            std::cin >> matrixOriginal[i][j];
+        }
+    }
 
     double **matrix = new double *[SIZE];
     for (size_t i = 0; i < SIZE; ++i) {
@@ -31,6 +36,7 @@ int main() {
     if (!gaussJordan(matrix, reversedMatrix, SIZE)) {
         std::cout << "Обратная матрица не существует";
     } else {
+
         multiplyMatrixes(matrixOriginal, reversedMatrix, resultMatrix, SIZE);
         printMatrix(reversedMatrix, SIZE);
         printMatrix(resultMatrix, SIZE);
